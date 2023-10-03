@@ -54,6 +54,7 @@ if __name__ == '__main__':
     else:
         print("No answer found")
 
+    pass
     matching_found = check(correct, True)
     nr_concepts = len(
         list(set([key for key in matching_found if key.startswith("c_")])))
