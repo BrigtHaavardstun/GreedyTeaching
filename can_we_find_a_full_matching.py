@@ -8,7 +8,7 @@ import json
 
 def check(x, return_matching=False):
     graph = generate_graph(
-        get_edge_list(), witness_weight=get_witness_weights(), max_weight=x)
+        get_edge_list(), witness_weight=get_witness_weights(), concept_weight=get_concept_weights(), max_weight=x)
     result = max_bipartite_matching(graph, return_matching=return_matching)
     if return_matching:
         return result
@@ -32,6 +32,14 @@ def get_witness_weights():
     return witness_set_weights
 
 
+def get_concept_weights():
+    concept_sets = json.loads(
+        open("graph_info/graph-concepts.json", "r").read())
+    concept_weights = {key: value[1]
+                       for key, value in concept_sets.items()}
+    return concept_weights
+
+
 if __name__ == '__main__':
     correct = -1
     found = False
@@ -52,5 +60,5 @@ if __name__ == '__main__':
     nr_witnesses = len(
         list(set([key for key in matching_found if key.startswith("w_")])))
     print(f"Unique concepts: {nr_concepts}. Unqiue witnesses: {nr_witnesses}")
-    with open("Optimal Matching", "w") as f:
+    with open("Optimal_Realative_Matching.json", "w") as f:
         f.write(json.dumps(matching_found, indent=4))
