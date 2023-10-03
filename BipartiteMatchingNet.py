@@ -7,7 +7,7 @@ W_tag = "w_"
 C_tag = "c_"
 
 
-def generate_graph(edge_list, witness_weight, concept_weight, max_weight=float("inf")):
+def generate_graph(edge_list, witness_weight, max_weight=float("inf")):
     B = nx.Graph()
     concepts = set([c for (c, w) in edge_list])
     witness = set(
@@ -17,7 +17,7 @@ def generate_graph(edge_list, witness_weight, concept_weight, max_weight=float("
     B.add_nodes_from([w for w in witness], bipartite=1)
 
     for (c, w) in edge_list:
-        if (witness_weight[w] - concept_weight[c]) <= max_weight:
+        if witness_weight[w] <= max_weight:
             B.add_edge(c, w)
     return B
 
