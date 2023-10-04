@@ -14,20 +14,19 @@ from MatchingEvaluation.GetNumberRepresentationTaught import getNrOfRepresentati
 from MatchingEvaluation.GetMaxWitnessSet import get_max_witness_set_size as getMaxWitnessSize
 from MatchingEvaluation.GetMaxWitnessNumber import get_max_witness_set_nr as getMaxWitnessNr
 
-
-def get_info_concsitensy_graph():
-    concept_number = True
-    representation_number = True
-    average_degree_witness = True
-    average_degree_representation = True
-    redudency_precentage = True
+from OptimalMatching.FindOptimalMatching import findAndStoreOptimalMatching
 
 
-def main():
-    folder = "boolean"
-
-    # graphInfoTest(folder)
+def main(folder):
+    makeOptimalMatching(folder)
+    graphInfoTest(folder)
     matchingInfoTest(folder)
+
+
+def makeOptimalMatching(folder):
+    print("-"*10 + "Start to create optimal matching..." + "-"*10)
+    findAndStoreOptimalMatching(folder)
+    print("-"*10 + "Done creating optimal matching" + "-"*10)
 
 
 def matchingInfoTest(folder):
@@ -45,6 +44,7 @@ def matchingInfoTest(folder):
 
 
 def graphInfoTest(folder):
+    print("-"*10 + "Graph Info" + "-"*10)
     print("Nr Concepts:", getConceptCount(folder))
     print("Nr Representations:", getRepCount(folder))
     print("Nr witness sets:", getWitnessCount(folder))
@@ -58,4 +58,13 @@ def graphInfoTest(folder):
 
 
 if __name__ == "__main__":
-    main()
+    # This is the main program. To run it, insert a folder with the same
+    # structure as "boolean" into the project
+    # Then update the name here, and run the program
+
+    folderName = "The name of your folder"
+    test = True  # Set to False
+    if test:
+        main("boolean")
+    else:
+        main(folderName)
