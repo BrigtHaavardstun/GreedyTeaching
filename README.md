@@ -8,16 +8,17 @@ This repository provides tools for analyzing different algorithms, as used in th
 
 Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contains the following files:
 
-  a. `eager-matching.json` - Matching created by the eager algorithm.
-     - Format: `[[representationID, witnessID]]`
-  b. `greedy-matching.json` - Matching created by the greedy algorithm.
-     - Format: `[[representationID, witnessID]]`
-  c. `graph-edges.json` - The consistency graph for your domain.
-     - Format: Edgelist `[[representationID, witnessID]]`
-  d. `graph-representations.json` - Dictionary containing information on the representations.
-     - Format: `{representationID : [representation, size]}`
-  e. `graph-witness-sets.json` - Dictionary containing information on the witness sets.
-     - Format: `{witnessID : [witnessSet, size]}`
+- **a.** `eager-matching.json` - Matching created by the eager algorithm.
+    - Format: `[[representationID, witnessID]]`
+- **b.** `greedy-matching.json` - Matching created by the greedy algorithm.
+    - Format: `[[representationID, witnessID]]`
+- **c.** `graph-edges.json` - The consistency graph for your domain.
+    - Format: Edgelist `[[representationID, witnessID]]`
+- **d.** `graph-representations.json` - Dictionary containing information on the representations.
+    - Format: `{representationID : [representation, size]}`
+- **e.** `graph-witness-sets.json` - Dictionary containing information on the witness sets.
+    - Format: `{witnessID : [witnessSet, size]}`
+
   
 **Note:** `representationID` should start with "c_" and `witnessID` should start with "w_".
 
