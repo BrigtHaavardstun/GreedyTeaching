@@ -1,6 +1,6 @@
 import json
 
-file_name = "Optimal_teachingSize_floor_10.json"
+file_name = "Optimal_teachingSize_wi.json"
 data = json.loads(open(file_name, "r").read())
 
 edge_list = []
