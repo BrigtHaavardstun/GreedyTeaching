@@ -31,7 +31,7 @@ files = ["greedy/(c-ii)-results-n_3-Greedy.txt",
 
 for file in files:
     data = ""
-    with open("greedy/(c-ii)-results-n_3-Greedy.txt", "r") as f:
+    with open(file, "r") as f:
         data = f.read()
     # Splitting the data into lines
     lines = data.split("\n")

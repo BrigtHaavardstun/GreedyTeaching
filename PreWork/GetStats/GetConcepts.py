@@ -3,7 +3,7 @@ import json
 
 def count_concepts_taught(file):
     data = json.loads(open(file, "r").read())
-    return len(set([c for (c, w) in data]))
+    return len([c for (c, w) in data])
 
 
 def start():
@@ -14,8 +14,8 @@ def start():
     optimal_wi = "optimal/Optimal_teachingSize_wi.json"
     all_files = [originial_file, greedy_file, optimal_wi]
     for file in all_files:
-        print(f"{file.split('/')[0]} max witness size", end=": ")
-        print(count_concepts_taught(file))
+        print(
+            f"{file.split('/')[0]} has {count_concepts_taught(file)} representations")
 
 
 if __name__ == "__main__":
