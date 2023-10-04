@@ -1,19 +1,36 @@
-# Analysis of experiment results
-Tools used to analyse the different algorithms for the paper When Redundancy Matters: Machine Teaching (of) Representations.
+# Analysis of Experiment Results
 
-How to use:
-    1. Upload a folder with a name of your choice, i.e. "MyFolder". The folder must contain the following files:
-        a. eager-matching.json - The matching created by eager algorithm. Format [[representationID, witnessID]]
-        b. greedy-matching.json - The matching created by greedy algorithm. Format [[representationID, witnessID]]
-        c. graph-edges.json - The consistency graph on your domain. Format edgelist, [[representationID, witnessID]]
-        d. graph-representations.json - The dict containing info on the representations. Format {representationID : [representation, size]}.
-        e. graph-witness-sets.json - The dict containing info on the witness sets. Format {witnessID : [witnessSet, size]}.
-        NB: representationID must start with "c_" and witnessID must start with "w_".
+This repository provides tools for analyzing different algorithms, as used in the paper _When Redundancy Matters: Machine Teaching (of) Representations_.
 
-    2. In run.py, insert the name of your folder, i.e. "MyFolder" on the 65'th line.
-    3. Install the requirements (see requirements.txt), (as far as i recalll it is just networkx and json)
-    4. Run run.py
+## 📂 How to Use
 
-    
-        
+### 1. Prepare Your Data Folder
 
+Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contains the following files:
+
+  a. `eager-matching.json` - Matching created by the eager algorithm.
+     - Format: `[[representationID, witnessID]]`
+  b. `greedy-matching.json` - Matching created by the greedy algorithm.
+     - Format: `[[representationID, witnessID]]`
+  c. `graph-edges.json` - The consistency graph for your domain.
+     - Format: Edgelist `[[representationID, witnessID]]`
+  d. `graph-representations.json` - Dictionary containing information on the representations.
+     - Format: `{representationID : [representation, size]}`
+  e. `graph-witness-sets.json` - Dictionary containing information on the witness sets.
+     - Format: `{witnessID : [witnessSet, size]}`
+  
+**Note:** `representationID` should start with "c_" and `witnessID` should start with "w_".
+
+### 2. Modify `run.py`
+
+Open `run.py` and insert the name of your folder (e.g., "MyFolder") on line 65.
+
+### 3. Install Dependencies
+
+Install the necessary dependencies as per `requirements.txt`. From the information available, these include:
+- `networkx`
+- `json`
+
+You can install them using pip:
+```bash
+pip install -r requirements.txt
