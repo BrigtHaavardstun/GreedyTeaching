@@ -63,8 +63,4 @@ if __name__ == "__main__":
     # Then update the name here, and run the program
 
     folderName = "The name of your folder"
-    test = True  # Set to False
-    if test:
-        main("boolean")
-    else:
-        main(folderName)
+    main(folderName)
