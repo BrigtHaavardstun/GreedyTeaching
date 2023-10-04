@@ -11,11 +11,10 @@ def generate_graph(edge_list, witness_weight, max_weight=float("inf")):
     B = nx.Graph()
     concepts = set([c for (c, w) in edge_list])
     witness = set(
-        [w for (c, w) in edge_list if witness_weight[w] <= max_weight])
+        [w for (c, w) in edge_list])
 
     B.add_nodes_from([c for c in concepts], bipartite=0)
-    B.add_nodes_from([w for w in witness if witness_weight[w]
-                     <= max_weight], bipartite=1)
+    B.add_nodes_from([w for w in witness], bipartite=1)
 
     for (c, w) in edge_list:
         if witness_weight[w] <= max_weight:
