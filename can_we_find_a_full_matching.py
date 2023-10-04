@@ -28,8 +28,8 @@ def get_edge_list():
 def get_witness_weights():
     witness_sets = json.loads(
         open("graph_info/graph-witness_sets.json", "r").read())
-    witness_weights = {key: math.floor(
-        int(key[2:])/10) for key, value in witness_sets.items()}
+    witness_weights = {key: math.floor(int(key[2:])/10)
+                       for key, value in witness_sets.items()}
     return witness_weights
 
 
@@ -61,5 +61,5 @@ if __name__ == '__main__':
     nr_witnesses = len(
         list(set([key for key in matching_found if key.startswith("w_")])))
     print(f"Unique concepts: {nr_concepts}. Unqiue witnesses: {nr_witnesses}")
-    with open("Optimal_teachingSize.json", "w") as f:
+    with open("Optimal_teachingSize_floor_10.json", "w") as f:
         f.write(json.dumps(matching_found, indent=4))

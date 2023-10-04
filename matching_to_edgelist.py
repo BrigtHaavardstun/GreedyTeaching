@@ -1,11 +1,12 @@
 import json
 
-data = json.loads(open("Optimal_Realative_Matching.json", "r").read())
+file_name = "Optimal_teachingSize_floor_10.json"
+data = json.loads(open(file_name, "r").read())
 
 edge_list = []
 for (concept, witness) in data.items():
     if "c_" in concept:
         edge_list.append([concept, witness])
 
-with open("optimal/edge_list.json", "w") as f:
+with open("optimal/" + file_name, "w") as f:
     f.write(json.dumps(edge_list, indent=4))
