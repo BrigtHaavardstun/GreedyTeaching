@@ -35,3 +35,8 @@ Install the necessary dependencies as per `requirements.txt`. From the informati
 You can install them using pip:
 ```bash
 pip install -r requirements.txt
+```
+
+### 4. Install Dependencies
+If you want to test the system on a mock domain, use "boolean" as your folder.
+
