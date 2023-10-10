@@ -9,10 +9,10 @@ def getNrOfConcepts(folder, matching):
 
     # concept -> [witness] (Its neighbourhood)
     dict_representation_to_neighbourhood = {rep: []
-                                            for (rep, _) in load_matching(folder=folder, matching=matching)}
+                                            for (rep, _) in load_matching(folder=folder, matching=matching)}  # we only care about the concept we taught
 
     for (representation, witness) in load_consitency_edge_list(folder):
-        if representation in dict_representation_to_neighbourhood:  # we only care about the concept we taught
+        if representation in dict_representation_to_neighbourhood:
             dict_representation_to_neighbourhood[representation].append(
                 witness)
 
@@ -23,6 +23,16 @@ def getNrOfConcepts(folder, matching):
         neighbourhood = ":".join(sorted(neighbourhood))  # Make it hashable
         if neighbourhood not in neighbourhood_set:
             neighbourhood_set.add(neighbourhood)
+
+    verbose = False
+    if verbose:
+        for neighbourhood_unique in neighbourhood_set:
+            for concept, neighbourhood in dict_representation_to_neighbourhood.items():
+                neighbourhood = ":".join(
+                    sorted(neighbourhood))  # Make it hashable
+                if neighbourhood == neighbourhood_unique:
+                    print(concept)
+                    break
 
     return len(neighbourhood_set)
 

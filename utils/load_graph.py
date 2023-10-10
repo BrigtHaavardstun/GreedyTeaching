@@ -14,11 +14,11 @@ def load_consitency_edge_list(folder):
 
 def load_witnesses(folder):
     witnesssets = json.loads(
-        open(f"{folder}/graph-witness-sets.json").read())
+        open(f"{folder}/graph-witness_sets.json").read())
     return witnesssets.keys()
 
 
 def load_witness_weights(folder):
     witnessSets = json.loads(
-        open(f"{folder}/graph-witness-sets.json").read())
+        open(f"{folder}/graph-witness_sets.json").read())
     return {witnessId: int(value[1]) for (witnessId, value) in witnessSets.items()}

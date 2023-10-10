@@ -10,6 +10,7 @@ def checkIfWeHaveFullMatching(witnessNr, folder):
         load_consitency_edge_list(folder=folder), witness_weight=custom_witness_inclution(folder=folder), maxWintessNr=witnessNr)
     matchingSize = get_size_of_max_bipartite_matching(
         graph, representaions=load_representations(folder=folder))
+    print(matchingSize)
     return len(load_representations(folder=folder)) == matchingSize
 
 
@@ -33,14 +34,39 @@ def findOptimalMatching(folder, verbose=False):
     found = False
     max_witnessNr = int(max(load_witnesses(folder),
                         key=lambda w: custom_witness_inclution(folder)[w])[2:])
-    for include_witness_up_to in range(1, max_witnessNr+1):
+
+    # We always use at least the min of witnesses and representations
+    start = min(len(load_witnesses(folder)), len(load_representations(folder)))
+    for include_witness_up_to in range(start, max_witnessNr+1):
+        print(f"{include_witness_up_to}/{max_witnessNr}")
+        maxWitnessNr = include_witness_up_to
         if checkIfWeHaveFullMatching(witnessNr=include_witness_up_to, folder=folder):
-            maxWitnessNr = include_witness_up_to
             found = True
             break
 
     if not found:
-        raise ValueError("No full matching found")
+        print("WARNING: we didn't find a matching containing all representations")
+
+    return getMatching(witnessNr=maxWitnessNr, folder=folder)
+
+
+def findAndStoreOptimalMatching(folder):
+    maxWitnessNr = -1
+    found = False
+    max_witnessNr = int(max(load_witnesses(folder),
+                        key=lambda w: custom_witness_inclution(folder)[w])[2:])
+
+    # We always use at least the min of witnesses and representations
+    start = min(len(load_witnesses(folder)), len(load_representations(folder)))
+    for include_witness_up_to in range(start, max_witnessNr+1):
+        print(f"{include_witness_up_to}/{max_witnessNr}")
+        maxWitnessNr = include_witness_up_to
+        if checkIfWeHaveFullMatching(witnessNr=include_witness_up_to, folder=folder):
+            found = True
+            break
+
+    if not found:
+        print("WARNING: we didn't find a full matching")
 
     return getMatching(witnessNr=maxWitnessNr, folder=folder)
 

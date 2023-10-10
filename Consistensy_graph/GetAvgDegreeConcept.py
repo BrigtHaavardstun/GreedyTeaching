@@ -1,7 +1,7 @@
 from utils.load_graph import load_representations, load_consitency_edge_list
 
 
-def getAvgDegreeOfConcepts(folder):
+def getAvgDegreeOfRepresentations(folder):
     # Make a dict over all representations. (Name -> count)
     dict_representation_count = {
         rep: 0 for rep in load_representations(folder)}
@@ -15,4 +15,4 @@ def getAvgDegreeOfConcepts(folder):
 
 if __name__ == '__main__':
     print("Average degree of representation:",
-          getAvgDegreeOfConcepts("boolean"))
+          getAvgDegreeOfRepresentations("boolean"))
