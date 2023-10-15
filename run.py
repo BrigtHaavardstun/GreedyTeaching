@@ -1,15 +1,13 @@
 # This is the manager of the program
 
-from Consistensy_graph.GetAvgDegreeConcept import getAvgDegreeOfRepresentations as getAvgReps
-from Consistensy_graph.GetMedianDegreeConcept import getMedianDegreeOfConcepts as getMedConc
-from Consistensy_graph.GetAvgDegreeWitness import getAvgDegreeOfWitnesses as getAvgWitness
-from Consistensy_graph.GetMedianDegreeWitness import getMedianDegreeOfWitnesses as getMedWitness
+
 from Consistensy_graph.GetRedudencyRate import getRedudencyRate as getRedRate
 from Consistensy_graph.GetConceptCount import getNrOfConceptInConsistensyGraph as getConceptCount
 from Consistensy_graph.GetRepresentationCount import getNrOfRepresentationsInConsistensyGraph as getRepCount
 from Consistensy_graph.GetWitnessCount import getNrOfWitnessSetsInConsistensyGraph as getWitnessCount
 from Consistensy_graph.GetEdgePercentage import getEdgePercentage as getEdgePercentage
 from Consistensy_graph.GetUniqueness import getUniquenessOfRepresentations as getUniqueness
+from Consistensy_graph.GetWitnessSpread import getWitnessSpread
 
 from MatchingEvaluation.GetNumberConceptTaught import getNrOfConcepts
 from MatchingEvaluation.GetNumberRepresentationTaught import getNrOfRepresentations as getNrOfReps
@@ -17,6 +15,7 @@ from MatchingEvaluation.GetMaxWitnessSet import get_max_witness_set_size as getM
 from MatchingEvaluation.GetMaxWitnessNumber import get_max_witness_set_nr as getMaxWitnessNr
 
 from OptimalMatching.FindOptimalMatching import findAndStoreOptimalMatching
+from OptimalMatching.ConceptOptimal import findAndStoreNewOptimalMatching
 
 
 def main(folder):
@@ -28,11 +27,13 @@ def main(folder):
 def makeOptimalMatching(folder):
     print("-"*10 + "Start to create optimal matching..." + "-"*10)
     findAndStoreOptimalMatching(folder)
+    findAndStoreNewOptimalMatching(folder)
     print("-"*10 + "Done creating optimal matching" + "-"*10)
 
 
 def matchingInfo(folder):
-    matchings = ["optimal"]  # ["eager", "greedy", "optimal"]
+    # ["eager", "greedy", "optimal"]
+    matchings = ["optimal", "optimalNew"]  # , "greedy"]
     for matching in matchings:
         print("-"*10 + matching + "-"*10)
         print("Nr. concepts in matching",
@@ -51,15 +52,10 @@ def graphInfo(folder):
     print("Nr Representations:", getRepCount(folder))
     print("Nr witness sets:", getWitnessCount(folder))
 
-    print("Redudency rate:", str(getRedRate(folder))+"%")
-
-    print("Avg Deg Representations:", getAvgReps(folder))
-    # print("Median Deg Concepts:", getMedConc(folder))
-    print("Avg Deg Witness:", getAvgWitness(folder))
-    # print("Median Deg Witness", getMedWitness(folder))
-    print("Percentage of edges in consitency graph:",
+    print("Density:",
           str(getEdgePercentage(folder))+"%")
-    print("Uniqueness:", getUniqueness(folder))
+    print("Redudancy:", round(1-getUniqueness(folder), 4))
+    print("Redudancy Spread:", getWitnessSpread(folder))
 
 
 if __name__ == "__main__":
@@ -68,4 +64,5 @@ if __name__ == "__main__":
     # Then update the name here, and run the program
 
     folderName = "3-DNF_max_cardin_5"
+    print("Working in domain:", folderName)
     main(folderName)
