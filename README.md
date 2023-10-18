@@ -22,11 +22,9 @@ Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contain
   
 **Note:** `representationID` should start with "c_" and `witnessID` should start with "w_".
 
-### 2. Modify `run.py`
 
-Open `run.py` and insert the name of your folder (e.g., "MyFolder") on line 65.
 
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 Install the necessary dependencies as per `requirements.txt`. From the information available, these include:
 - `networkx`
@@ -36,7 +34,15 @@ You can install them using pip:
 ```bash
 pip install -r requirements.txt
 ```
+### 3. Modify `run.py`
 
-### 4. Install Dependencies
+Open `run.py` and insert the name of your folder (e.g., "MyFolder") on line 65.
 If you want to test the system on a mock domain, use "boolean" as your folder.
+
+### 4. Run `run.py`
+```bash
+python3 run.py
+```
+
+
 
