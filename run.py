@@ -19,9 +19,9 @@ from OptimalMatching.ConceptOptimal import findAndStoreNewOptimalMatching
 
 
 def main(folder):
-    # makeOptimalMatching(folder)
+    makeOptimalMatching(folder)
     graphInfo(folder)
-    # matchingInfo(folder)
+    matchingInfo(folder)
 
 
 def makeOptimalMatching(folder):
@@ -35,7 +35,10 @@ def matchingInfo(folder):
     # ["eager", "greedy", "optimal"]
     matchings = ["optimal", "optimalNew"]  # , "greedy"]
     for matching in matchings:
-        print("-"*10 + matching + "-"*10)
+        if "optimalNew" == matching:
+            print("-"*10 + "Optimal-2 approximation" + "-"*10)
+        else:
+            print("-"*10 + matching + "-"*10)
         print("Nr. concepts in matching",
               getNrOfConcepts(folder=folder, matching=matching))
         print("Nr. reps. in matching",
@@ -63,6 +66,6 @@ if __name__ == "__main__":
     # structure as "boolean" into the project
     # Then update the name here, and run the program
 
-    folderName = "3-DNF_max_cardin_5"
+    folderName = "sudo-P3"
     print("Working in domain:", folderName)
     main(folderName)
