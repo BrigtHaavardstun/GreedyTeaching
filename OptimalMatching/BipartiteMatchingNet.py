@@ -1,6 +1,4 @@
 import networkx as nx
-from networkx.algorithms import bipartite
-from collections import defaultdict
 
 W_tag = "w_"
 C_tag = "c_"

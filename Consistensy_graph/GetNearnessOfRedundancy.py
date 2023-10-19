@@ -1,5 +1,4 @@
 from utils.load_graph import load_representations, load_consitency_edge_list, load_witnesses
-import math
 
 
 def _getDictOfNeighboorhoodToRepresentations(folder):
