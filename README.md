@@ -28,11 +28,15 @@ Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contain
 
 Install the necessary dependencies as per `requirements.txt`. These include:
 - `networkx`
-- `json`
 
 You can install them using pip:
 ```bash
 pip install -r requirements.txt
+```
+
+or 
+```
+pip install networkx
 ```
 ### 3. Modify `run.py`
 
