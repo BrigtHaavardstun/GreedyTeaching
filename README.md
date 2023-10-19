@@ -20,8 +20,11 @@ pip install networkx
 ```
 ### 2. Modify `run.py`
 
-Open `run.py` and insert the name of your folder (e.g., on of ["small-P3","3-DNF_max_cardin_5","3-Term_DNF_max_cardin_5"]) on line 65.
-If you want to test the system on a mock domain, use "boolean" as your folder.
+Open `run.py` and insert the name of your folder on line 69., chose on of the folders in the project
+- small-P3
+- 3-DNF_max_cardin_5
+- 3-Term_DNF_max_cardin_5
+
 
 ### 3. Run `run.py`
 ```bash
@@ -30,7 +33,7 @@ python3 run.py
 
 ### 4. (Extra) Adding your own Data Folder
 
-You can use the system devloped here 
+You can use the system developed here 
 Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contains the following files:
 
 - **a.** `eager-matching.json` - Matching created by the eager algorithm.
