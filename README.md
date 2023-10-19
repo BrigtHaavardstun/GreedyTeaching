@@ -26,7 +26,7 @@ Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contain
 
 ### 2. Install Dependencies
 
-Install the necessary dependencies as per `requirements.txt`. From the information available, these include:
+Install the necessary dependencies as per `requirements.txt`. These include:
 - `networkx`
 - `json`
 
