@@ -1,0 +1,24 @@
+# Python artifacts
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+*.venv/
+*.virtualenv/
+__pycache__/
+
+# Distribution and build artifacts
+build/
+dist/
+*.tar.gz
+*.tar.bz2
+*.tar
+
+# macOS artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
