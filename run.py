@@ -69,5 +69,7 @@ if __name__ == "__main__":
     folderName = "small-P3"
     # folderName = "3-DNF_max_cardin_5"
     # folderName = "3-Term_DNF_max_cardin_5"
+
     print("Working in domain:", folderName)
-    main(folderName)
+    pathToFile = "Data/" + folderName
+    main(pathToFile)
