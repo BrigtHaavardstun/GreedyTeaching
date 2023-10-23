@@ -1,5 +1,5 @@
-from Consistensy_graph.GetConceptCount import getNrOfConceptInConsistensyGraph as nrConcepts
-from Consistensy_graph.GetRepresentationCount import getNrOfRepresentationsInConsistensyGraph as nrRepresentations
+from ConsistencyGraph.GetConceptCount import getNrOfConceptInConsistensyGraph as nrConcepts
+from ConsistencyGraph.GetRepresentationCount import getNrOfRepresentationsInConsistensyGraph as nrRepresentations
 
 
 # Thus far, redudency -> 1-(concepts/representations)
