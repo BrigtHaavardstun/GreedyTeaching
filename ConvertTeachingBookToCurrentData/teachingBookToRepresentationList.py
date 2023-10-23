@@ -20,5 +20,5 @@ def toRepList(file, folder):
 
 if __name__ == "__main__":
     file = "SmallP3_consitensygraph_fixedRepIDWitnessID.txt"
-    folder = "sudo-P3"
+    folder = "Data/small-P3"
     toRepList(file, folder)

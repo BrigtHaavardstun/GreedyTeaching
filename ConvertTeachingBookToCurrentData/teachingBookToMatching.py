@@ -27,7 +27,7 @@ def TeachingBookToMatching(folder, file, new_file):
 
 
 if __name__ == '__main__':
-    folder = "sudo-P3"
+    folder = "Data/small-P3"
     read_from_file = "small_P3-Greedy-k_4-TB.txt"
     new_file = "greedy-matching"
     TeachingBookToMatching(folder, read_from_file, new_file)

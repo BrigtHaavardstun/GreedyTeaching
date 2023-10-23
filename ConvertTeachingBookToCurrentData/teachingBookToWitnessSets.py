@@ -1,7 +1,7 @@
 import json
 
 
-def toRepList(file, folder):
+def toWitnessList(file, folder):
     lines = []
     with open(file, 'r') as f:
         lines = f.read().split("\n")
@@ -20,5 +20,5 @@ def toRepList(file, folder):
 
 if __name__ == "__main__":
     file = "SmallP3_consitensygraph_fixedRepIDWitnessID.txt"
-    folder = "sudo-P3"
-    toRepList(file, folder)
+    folder = "Data/small-P3"
+    toWitnessList(file, folder)

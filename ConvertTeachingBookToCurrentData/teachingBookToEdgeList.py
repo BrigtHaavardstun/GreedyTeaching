@@ -20,7 +20,7 @@ def TeachingBookToEdgeList(folder, file, new_file):
 
 
 if __name__ == '__main__':
-    folder = "sudo-P3"
+    folder = "Data/small-P3"
     new_file = "graph-edges"
     read_from = "SmallP3_consitensygraph_fixedRepIDWitnessID.txt"
     TeachingBookToEdgeList(folder, read_from, new_file)
