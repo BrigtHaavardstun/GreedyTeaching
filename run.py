@@ -66,6 +66,6 @@ if __name__ == "__main__":
     # structure as "boolean" into the project
     # Then update the name here, and run the program
 
-    folderName = "sudo-P3"
+    folderName = "small-P3"
     print("Working in domain:", folderName)
     main(folderName)
