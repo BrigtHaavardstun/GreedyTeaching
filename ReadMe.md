@@ -34,11 +34,11 @@ python3 run.py
 ### 4. (Extra) Adding your own Data Folder
 
 You can use the system developed here 
-Upload a folder with a name of your choice (e.g., "MyFolder"). Ensure it contains the following files:
+Upload a folder with a name of your choice (e.g., "MyFolder") to the folder Data. Ensure it contains the following files:
 
-- **a.** `eager-matching.json` - Matching created by the eager algorithm.
+- **a.** `eager-matching.json` (optional) - Matching created by the eager algorithm.
     - Format: `[[representationID, witnessID]]`
-- **b.** `greedy-matching.json` - Matching created by the greedy algorithm.
+- **b.** `greedy-matching.json` (optional) - Matching created by the greedy algorithm.
     - Format: `[[representationID, witnessID]]`
 - **c.** `graph-edges.json` - The consistency graph for your domain.
     - Format: Edgelist `[[representationID, witnessID]]`
